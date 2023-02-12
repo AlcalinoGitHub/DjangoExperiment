@@ -130,4 +130,5 @@ import os
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, r'C:\Users\Yo\Desktop\MiPc\BackendDjangoTest\DjangoExperiment\mysite\ControlApp\static')
 ]
