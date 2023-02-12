@@ -6,3 +6,4 @@ from django.http import HttpResponse
 
 def MainPage(request):
     return redirect('/static/MainPage.html')
+
