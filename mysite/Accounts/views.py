@@ -24,10 +24,26 @@ def register(request):
                 user = User.objects.create_user(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
                 user.save();
                 messages.info(request,'user created')
-                return redirect('/')
+                return redirect('/accounts/login/')
         else:
             messages.info(request,'passwords dont mathc')
             return redirect('/accounts/register/')
 
     else:
         return render(request, 'register.html')
+    
+
+def logIn(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username, password=password)
+
+
+        if username is not None:
+            auth.login(request, user)
+            return redirect('/static/MainPage.html')
+        else:
+            return redirect('/static/MainPage.html')
+    else:
+        return render(request, 'logIn.html')
