@@ -1,0 +1,19 @@
+.center-div {
+    position: relative;
+    background: white;
+    margin: 20;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
+    text-decoration: dashed;
+    border-radius: 25%;
+}
+
+
+.formulario {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0;
+}

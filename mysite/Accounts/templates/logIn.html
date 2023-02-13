@@ -4,18 +4,21 @@
   <head>
     <meta charset="UTF-8">
     <title>RegisterPage</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'Accounts/templates/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="/static/stylus.css">
+    </style>
   </head>
   <body>
     <div class = "center-div">
         <h1>User LogIn</h1>
     </div>
 
-    <form method = 'post'>
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="Username"><br>
-        <input type="password" name="password" placeholder="Password"><br>
-        <input type = 'submit'>
+    <div class = formulario>
+        <form method = 'post'>
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input type = 'submit'>
+    </div>
 
     </form>
 

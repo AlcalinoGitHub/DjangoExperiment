@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <title>RegisterPage</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'Accounts/templates/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="/static/stylus.css">
   </head>
   <body>
     <div class = "center-div">
@@ -21,7 +21,7 @@
 
     </form>
 
-    <div>
+    <div class = 'ErrorMessage'>
         {% for message in messages %}
         <h3> {{message}} </h3>
         {% endfor %}
