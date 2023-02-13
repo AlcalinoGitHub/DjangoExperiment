@@ -40,10 +40,12 @@ def logIn(request):
         user = auth.authenticate(username=username, password=password)
 
 
-        if username is not None:
+        if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            messages.info(request, 'User logged in succesfully!')
+            return redirect('/accounts/login/')
         else:
-            return redirect('/accounts/register/')
+            messages.info(request, 'Invalid username or password')
+            return redirect('/accounts/login/')
     else:
         return render(request, 'logIn.html')
