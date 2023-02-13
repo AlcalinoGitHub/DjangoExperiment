@@ -47,9 +47,14 @@ def logIn(request):
         if user is not None:
             auth.login(request, user)
             messages.info(request, 'User logged in succesfully!')
-            return redirect('/accounts/login/')
+            return redirect('/')
         else:
             messages.info(request, 'Wrong user or password')
             return redirect('/accounts/login/')
     else:
         return render(request, 'logIn.html')
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
