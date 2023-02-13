@@ -6,5 +6,5 @@ from django.contrib.auth.models import User
 class Task(models.Model):
     Name = models.CharField(max_length=50)
     Description = models.TextField()
-    DueDate = models.DateField()
+    DueDate = models.DateField(null=True, blank=True)
     Owner = models.ForeignKey(User, on_delete=models.CASCADE)
