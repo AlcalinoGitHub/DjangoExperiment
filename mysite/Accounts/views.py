@@ -42,8 +42,8 @@ def logIn(request):
 
         if username is not None:
             auth.login(request, user)
-            return redirect('/static/MainPage.html')
+            return redirect('/')
         else:
-            return redirect('/static/MainPage.html')
+            return redirect('/accounts/register/')
     else:
         return render(request, 'logIn.html')
