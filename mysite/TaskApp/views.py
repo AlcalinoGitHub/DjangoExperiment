@@ -9,11 +9,10 @@ from TaskApp.models import Task
 def CreateTask(request):
     if request.method == "POST":
         try:
+            usuario = request.user
             Name = request.POST['Name']
             Description = request.POST['Description']
             DueDate = request.POST['DueDate']
-            Owner = request.POST['Owner']
-            usuario = User.objects.get(username = Owner)
             NewTask = Task(Name=Name, Description=Description, DueDate=DueDate, Owner=usuario)
             NewTask.save()
             messages.info(request, "Task Saved")

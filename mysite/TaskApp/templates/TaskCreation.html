@@ -11,11 +11,10 @@
         {% csrf_token %}
         <input type="text" name="Name" placeholder="Task Name"><br>
         <input type="text" name="Description" placeholder="Description"><br>
-        <input type="text" name= "Owner" placeholder="Your Username"><br>
         <input type= 'date' name="DueDate" placeholder=""><br>
         <input type = 'submit'>
     </form>
-
+  <a href="/">Main Page</a>
 
     <div class = 'ErrorMessage'>
         {% for message in messages %}
