@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div><h1>Task Creation UI</h1></div>
+    <form method = 'post'>
+        {% csrf_token %}
+        <input type="text" name="Name" placeholder="Task Name"><br>
+        <input type="text" name="Description" placeholder="Description"><br>
+        <input type="text" name= "Owner" placeholder="Your Username"><br>
+        <input type= 'date' name="DueDate" placeholder=""><br>
+        <input type = 'submit'>
+    </form>
+
+
+    <div class = 'ErrorMessage'>
+        {% for message in messages %}
+        <h3> {{message}} </h3>
+        {% endfor %}
+    </div>
+  </body>
+</html>

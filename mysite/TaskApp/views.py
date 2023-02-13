@@ -8,14 +8,21 @@ from TaskApp.models import Task
 
 def CreateTask(request):
     if request.method == "POST":
-        Name = request.POST['Name']
-        Description = request.POST['Description']
-        DueDate = request.POST['DueDate']
-        Owner = request.POST['Owner']
-
-        NewTask = Task(Name=Name, Description=Description, DueDate=DueDate, Owner=Owner)
+        try:
+            Name = request.POST['Name']
+            Description = request.POST['Description']
+            DueDate = request.POST['DueDate']
+            Owner = request.POST['Owner']
+            usuario = User.objects.get(username = Owner)
+            NewTask = Task(Name=Name, Description=Description, DueDate=DueDate, Owner=usuario)
+            NewTask.save()
+            messages.info(request, "Task Saved")
+            return render(request, 'TaskCreation.html')
+        except:
+            messages.info(request, 'All fields must be filled')
+            return render(request, 'TaskCreation.html')
 
     else:
-        return HttpResponse("Task creation")  #Add an html here for task creation
+        return render(request, 'TaskCreation.html') 
 
 

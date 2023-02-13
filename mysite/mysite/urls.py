@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ControlApp.urls')),
     path('accounts/', include('Accounts.urls')),
-    path('', include('TaskApp.urls'))
+    path('Tasks/', include('TaskApp.urls'))
 ]
 urlpatterns += staticfiles_urlpatterns()
