@@ -45,7 +45,7 @@ def logIn(request):
             messages.info(request, 'User logged in succesfully!')
             return redirect('/accounts/login/')
         else:
-            messages.info(request, 'Invalid username or password')
+            
             return redirect('/accounts/login/')
     else:
         return render(request, 'logIn.html')
