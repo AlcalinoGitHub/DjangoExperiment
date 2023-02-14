@@ -23,5 +23,12 @@ def CreateTask(request):
 
     else:
         return render(request, 'TaskCreation.html') 
+    
+
+def SavedTasks(request):
+    Data = Task.objects.filter(Owner = request.user)
+    context = {'tasks': Data}
+    print(context)
+    return render (request, 'ViewTask.html', context)
 
 
