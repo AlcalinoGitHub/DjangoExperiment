@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ControlApp',
     'Accounts',
+    'TaskApp'
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Accounts/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'Accounts/templates'), os.path.join(BASE_DIR,'ControlApp/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

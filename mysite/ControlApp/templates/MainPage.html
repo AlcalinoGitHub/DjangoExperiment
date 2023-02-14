@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+    <div class = "center-div">
+      <h1>MainPage</h1>
+    </div>
+
+
+    {% if user.is_authenticated %}
+
+    <div class = 'UserWelcome'>
+    <li>Hello, {{user.username}}</li>
+    </div>
+
+    <div class = 'Register-Button'>
+      <li><a href='/Tasks/CreateTask/'>Tasks</a></li>
+    </div>
+
+
+    <div class = 'Register-Button'>
+      <li><a href='/accounts/logout/'>LogOut</a></li>
+    </div>
+
+    {% else %}
+    <div class = 'Register-Button'>
+      <li><a href='/accounts/register/'>Register</a></li>
+    </div>
+    <div class = 'Register-Button'>
+      <li><a href='/accounts/login/'>LogIn</a></li>
+    </div>
+    {% endif %}
+
+
+
+  </body>
+</html>

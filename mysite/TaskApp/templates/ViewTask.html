@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div><h1>View Tasks</h1></div>
+
+    {% for task in tasks %}
+    <li>{{task.Name}}<br> Description:{{task.Description}} <br> Due: {{task.DueDate}} <br></li><br>
+    {% endfor %}
+
+    <a href="/Tasks/CreateTask/">Create a Task</a>
+    <a href="/">Main Page</a>
+
+    </div>
+  </body>
+</html>

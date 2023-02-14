@@ -18,3 +18,10 @@
     font-size: larger;
     padding-top: 10px;
 }
+
+.UserWelcome {
+    background-color: ghostwhite;
+    margin: auto;
+    border: 10px solid slategray;
+    text-align: center;
+}
