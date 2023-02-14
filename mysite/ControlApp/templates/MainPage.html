@@ -26,6 +26,7 @@
       <li><a href='/accounts/logout/'>LogOut</a></li>
     </div>
 
+
     {% else %}
     <div class = 'Register-Button'>
       <li><a href='/accounts/register/'>Register</a></li>
@@ -35,6 +36,10 @@
     </div>
     {% endif %}
 
+    <form action='accounts/delete/' method="post"></form>
+        {% csrf_token %}
+        <input type="hidden" name="userId" value="{{ auth }}">
+        <input name="DeleteButton" type="submit" value="Delete user !" id="{{auth}}">
 
 
   </body>

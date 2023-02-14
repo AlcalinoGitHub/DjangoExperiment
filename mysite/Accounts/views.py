@@ -58,3 +58,15 @@ def logIn(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+
+def Delete(request):
+    if request.method == 'POST':
+        print('POST')
+        userid = request.POST.get('userId')
+        user = User.objects.get(id = userid)
+        user.delete()
+        return redirect('/')
+    else:
+        print('NOT POST')
+        return redirect('/')

@@ -40,3 +40,4 @@ def delete_task(request):
         return redirect('/Tasks/SeeTask/')
 
 
+
