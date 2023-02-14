@@ -32,3 +32,11 @@ def SavedTasks(request):
     return render (request, 'ViewTask.html', context)
 
 
+def delete_task(request):
+    if request.method == 'POST':
+        task_id = request.POST.get('task_id')
+        task = Task.objects.get(id=task_id)
+        task.delete()
+        return redirect('/Tasks/SeeTask/')
+
+

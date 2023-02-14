@@ -9,9 +9,18 @@
     <div><h1>View Tasks</h1></div>
 
     {% for task in tasks %}
-    <li>{{task.Name}}<br> Description:{{task.Description}} <br> Due: {{task.DueDate}} <br></li><br>
-    {% endfor %}
+    <li>
+        {{task.Name}}<br> Description:{{task.Description}} <br> Due: {{task.DueDate}} <br>
+        <form action='delete_task/' method="post">
+            {% csrf_token %}
+            <input type="hidden" name="task_id" value="{{ task.id }}">
+            <input name="DeleteButton" type="submit" value="Delete Task" id="{{task.Owner}}">
+        </form>
+    </li>
+{% endfor %}
 
+
+    <br></br>
     <a href="/Tasks/CreateTask/">Create a Task</a>
     <a href="/">Main Page</a>
 
